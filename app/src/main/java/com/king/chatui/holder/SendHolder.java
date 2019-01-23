@@ -12,7 +12,6 @@ import com.hwq.lib_common.utils.Utils;
 import com.king.chatui.R;
 import com.king.chatui.entity.MessageEntity;
 import com.king.chatui.listenter.ChatListenter;
-import com.king.chatui.utils.CornerTransform;
 import com.king.chatui.utils.MessageType;
 
 public class SendHolder extends BaseViewHolder<MessageEntity> {

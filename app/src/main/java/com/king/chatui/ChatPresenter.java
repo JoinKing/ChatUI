@@ -41,7 +41,6 @@ public class ChatPresenter {
     private static final String TAG = "ChatPresenter";
     private static final String SHARE_PREFERENCE_NAME = "0x001";
     private static final String SHARE_PREFERENCE_TAG = "0x002";
-    private ChatFunctionFragment chatFunctionFragment;
     private Activity mActivity;
     private InputMethodManager mInputManager;
     private SharedPreferences sp;
@@ -340,7 +339,7 @@ public class ChatPresenter {
 
 
     public ChatPresenter setChatFunctionFragment(ChatFunctionFragment functionFragment) {
-        this.chatFunctionFragment = functionFragment;
+//        this.chatFunctionFragment = functionFragment;
 //        chatFunctionFragment.setCallback(this);
         return this;
     }

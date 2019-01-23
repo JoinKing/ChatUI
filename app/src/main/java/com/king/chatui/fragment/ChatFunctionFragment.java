@@ -26,7 +26,6 @@ import com.hwq.lib_common.utils.ToastUtils;
 import com.king.chatui.R;
 import com.king.chatui.entity.MessageEntity;
 import com.king.chatui.utils.MessageType;
-import com.king.chatui.utils.PhotoBitmapUtils;
 import com.king.chatui.utils.PhotoUtils;
 
 import java.io.File;
@@ -104,7 +103,7 @@ public class ChatFunctionFragment extends Fragment implements View.OnClickListen
     //打开相机
     private void openCamera() {
         if (isPermissions()) {
-            fileUri = ImageUtils.createFile(new File(Environment.getExternalStorageDirectory().getPath() + "/huang"), "", ".jpg");
+            fileUri = ImageUtils.createFile(new File(Environment.getExternalStorageDirectory().getPath() + "/DCIM/huang"), "", ".jpg");
             imageUri = Uri.fromFile(fileUri);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
                 imageUri = FileProvider.getUriForFile(getContext(), "com.king.chatui.fileprovider", fileUri);//通过FileProvider创建一个content类型的Uri

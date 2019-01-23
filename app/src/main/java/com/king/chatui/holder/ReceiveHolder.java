@@ -11,7 +11,6 @@ import com.hwq.lib_common.utils.Utils;
 import com.king.chatui.R;
 import com.king.chatui.entity.MessageEntity;
 import com.king.chatui.listenter.ChatListenter;
-import com.king.chatui.utils.CornerTransform;
 import com.king.chatui.utils.MessageType;
 
 import static com.king.chatui.utils.MessageType.LEFT_CHAT_FILE_TYPE_TEXT;
