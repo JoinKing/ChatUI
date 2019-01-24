@@ -21,6 +21,7 @@ import com.hwq.lib_common.bus.RxBus;
 import com.hwq.lib_common.bus.RxSubscriptions;
 import com.hwq.lib_common.utils.FixMemLeak;
 import com.hwq.lib_common.utils.KeyBoardUtils;
+import com.hwq.lib_common.utils.ToastUtils;
 import com.hwq.lib_common.widget.refreshlayout.RefreshListenerAdapter;
 import com.hwq.lib_common.widget.refreshlayout.header.progresslayout.ProgressLayout;
 import com.hwq.lib_common.widget.refreshlayout.view.RefreshLayout;
@@ -157,21 +158,29 @@ public class ChatActivity extends AppCompatActivity implements View.OnLayoutChan
                 .bindToVoiceText(voiceText)
                 .build();
     }
-    int index = 10;
+    int index = 0;
     /**
      * 历史数据
      */
     private void initList() {
-        for (int i = 0; i < 100; i++) {
-            MessageEntity messageEntity = new MessageEntity();
-            messageEntity.setType(MessageType.LEFT_CHAT_FILE_TYPE_TEXT);
-            messageEntity.setContent("测试数据" + i);
-            messageEntityList.add(messageEntity);
-        }
-        if (null!=chatAdapter){
-            chatAdapter.notifyDataSetChanged();
+        if (index<=10){
+            for (int i = 0; i < 10; i++) {
+                MessageEntity messageEntity = new MessageEntity();
+                messageEntity.setType(MessageType.LEFT_CHAT_FILE_TYPE_TEXT);
+                messageEntity.setContent("测试数据" + i);
+                messageEntityList.add(messageEntity);
+            }
+            if (null!=chatAdapter){
+                index++;
+                chatAdapter.notifyDataSetChanged();
+                mSwipeRefresh.setRefreshing(false);
+            }
+
+        }else {
+            ToastUtils.showShort("加载完毕");
             mSwipeRefresh.setRefreshing(false);
         }
+
 
     }
 

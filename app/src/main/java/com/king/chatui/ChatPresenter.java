@@ -150,6 +150,7 @@ public class ChatPresenter {
                     mViewPager.setCurrentItem(0);
                     isShowEmotion = true;
                 }
+                hideVoiceShowInput();
             }
         });
         return this;
@@ -182,9 +183,19 @@ public class ChatPresenter {
                     mViewPager.setCurrentItem(1);
                     isShowAdd = true;
                 }
+                hideVoiceShowInput();
             }
         });
         return this;
+    }
+
+    /**
+     * hide mVoiceText
+     * show mEditText
+     */
+    public void hideVoiceShowInput(){
+        mVoiceText.setVisibility(View.GONE);
+        mEditText.setVisibility(View.VISIBLE);
     }
 
     public ChatPresenter bindToSendButton(View sendButton) {
@@ -274,8 +285,6 @@ public class ChatPresenter {
                             }
                             mVoiceText.setText("按住说话");
                             mVoiceText.setTag("3");
-//                        mVoiceText.setVisibility(View.GONE);
-//                        mEditText.setVisibility(View.VISIBLE);
                         }
 
                         break;
